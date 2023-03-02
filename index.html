@@ -7,6 +7,8 @@
 	<link rel="stylesheet" href="styles.css">
 	<script type="module" src="pieces.js"></script>
 	<link rel="shortcut icon" href="./favicon_io/favicon.ico">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+
 </head>
 
 <body>
@@ -18,10 +20,42 @@
 		<!-- Menu de recherche -->
 		<section class="filtres">
 			<h3>Filtres</h3>
+			<button class="btn-trier">Trier par prix croissant</button>
+			<br>
+			<button class="btn-filtrer">Filtrer les pièces non abordables</button>
+			<br>
+			<button class="btn-trier-reverse">Trier par prix décroissant</button>
+			<br>
+			<button class="btn-filtrer-description">Filtrer les pièces sans description</button>
+			<br>
+			<label class="rangeLabel" for="range">Filtrer par prix : 60€</label>
+			<br>
+			<input type="range" class="btn-filter-range" id="range" min="0" max="60" step="5" defaultValue="60">
+			<h3>Ajouter un avis</h3>
+			<form class="formulaire-avis">
+				Identifiant de la pièce :<br>
+				<input type="number" name="piece-id"><br>
+				Nom d'utilisateur :<br>
+				<input type="text" name="utilisateur"><br>
+				Avis :<br>
+				<input type="text" name="commentaire"><br>
+				Nombre d'étoiles : <br>
+				<input type="number" name="nb-stars" min="0" max="5"><br>
+				<button>Envoyer</button>
+			</form>
+			<button class="btn-maj">Mettre à jour les pièces</button>
+			<h3>Aperçu des avis</h3>
+
+			<canvas id="graphique-avis" width="300" height="300"></canvas>
+
+			<h3>Nombre de commentaires</h3>
+
+			<canvas id="graphique-commentaires" width="300" height="300"></canvas>
 		</section>
 
 		<!-- Fiches produits -->
 		<section class="fiches">
+
 		</section>
 	</main>
 </body>
